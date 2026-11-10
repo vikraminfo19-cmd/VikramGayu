@@ -3,7 +3,7 @@
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Yatra+One&family=Kalam:wght@400;700&family=Karla:wght@400;600;700&family=Noto+Serif+Tamil:wght@600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Yatra+One&family=Kalam:wght@400;700&family=Karla:wght@400;600;700&family=Noto+Serif+Tamil:wght@500;600&display=swap">
 <style>
 /* Layout: hanging marigold strands frame a splash hero you can "apply haldi" to; a perforated event ticket, venue card with map, family blessing. Single warm theme by choice. */
 :root{
@@ -16,9 +16,9 @@
   --paper:#FFFBEA;
   --ink:#2A1F05;
   --muted:#6E5714;
-  --display:"Yatra One","Georgia",serif;
-  --hand:"Kalam","Comic Sans MS",cursive;
-  --body:"Karla",system-ui,sans-serif;
+  --display:"Yatra One","Noto Serif Tamil","Georgia",serif;
+  --hand:"Kalam","Noto Serif Tamil","Comic Sans MS",cursive;
+  --body:"Karla","Noto Serif Tamil",system-ui,sans-serif;
   --tamil:"Noto Serif Tamil","Latha",serif;
   color-scheme:light;
 }
@@ -61,7 +61,7 @@ main{position:relative;z-index:1;max-width:640px;margin:-80px auto 0;display:fle
 .hero > *:not(canvas){position:relative;z-index:2}
 .ganesh{font-family:var(--tamil);color:var(--kumkum);font-size:14px}
 .kicker{font-family:var(--hand);font-size:22px;color:var(--leaf);margin-top:10px;transform:rotate(-2deg)}
-h1{font-family:var(--display);font-weight:400;font-size:clamp(72px,22vw,132px);line-height:.95;margin:4px 0 0;color:var(--marigold);
+h1{font-family:var(--display);font-weight:400;font-size:clamp(60px,17vw,112px);line-height:.95;margin:4px 0 0;color:var(--marigold);
   text-shadow:3px 3px 0 var(--kumkum);letter-spacing:.01em}
 .tamil-title{font-family:var(--tamil);color:var(--leaf);font-size:20px;margin-top:6px}
 .bowl{display:block;width:120px;height:70px;margin:20px auto 6px}
@@ -123,6 +123,16 @@ footer{text-align:center;position:relative;z-index:1;margin-top:30px}
 footer .tag{font-family:var(--display);font-size:24px;color:var(--kumkum)}
 footer div{font-family:var(--hand);font-size:18px}
 
+/* bilingual: Tamil leads, English follows smaller */
+.en{display:block;font-family:"Karla",system-ui,sans-serif;font-size:.72em;font-weight:400;color:var(--muted);letter-spacing:.02em;line-height:1.4;margin-top:2px;transform:none}
+.names .tn{display:block;font-family:var(--tamil);font-weight:600;font-size:clamp(26px,7vw,36px);line-height:1.3}
+.names .en{font-size:14px;text-transform:uppercase;letter-spacing:.14em}
+.names .amp{font-size:30px}
+.kicker .en{font-size:15px;color:var(--leaf)}
+.families p + p{margin-top:8px}
+.countdown span{line-height:1.25;font-size:10px}
+.ticket dt{line-height:1.3}
+.stub .m{letter-spacing:.08em}
 @media (max-width:440px){
   .card{padding:26px 18px}
   .families{grid-template-columns:1fr}
@@ -139,12 +149,12 @@ footer div{font-family:var(--hand);font-size:18px}
 <div class="strands" id="strands" aria-hidden="true"></div>
 
 <main>
-  <section class="hero" id="hero" tabindex="0" aria-label="Haldi invitation. Tap to splash haldi.">
+  <section class="hero" id="hero" tabindex="0" aria-label="மஞ்சள் நீராட்டு விழா அழைப்பிதழ்">
     <canvas id="splash" aria-hidden="true"></canvas>
-    <div class="ganesh">ஸ்ரீ விநாயகர் துணை</div>
-    <div class="kicker">Come, let's get yellow!</div>
-    <h1>Haldi</h1>
-    <div class="tamil-title">மஞ்சள் நீராட்டு விழா</div>
+    <div class="ganesh">ஸ்ரீ முருகன் துணை</div>
+    <div class="kicker">வாங்க, மஞ்சளில் நனையலாம்!</div>
+    <h1>மஞ்சள்</h1>
+    <div class="tamil-title">நீராட்டு விழா</div>
     <svg class="bowl" viewBox="0 0 120 70" aria-hidden="true">
       <ellipse cx="60" cy="24" rx="48" ry="10" fill="#FFC21A"/>
       <ellipse cx="60" cy="22" rx="40" ry="6" fill="#FFE066"/>
@@ -155,66 +165,68 @@ footer div{font-family:var(--hand);font-size:18px}
       <path d="M66 20 q8 -14 14 0" stroke="#1E5631" stroke-width="3" fill="none"/>
     </svg>
     <div class="names">
-      Gayathri Devi S
-      <span class="amp">weds</span>
-      Vikram P
+      <span class="tn">செ. காயத்ரி தேவி</span>
+      
+      <span class="amp">&amp;</span>
+      <span class="tn">ப. விக்ரம்</span>
+      
     </div>
-    <div class="tap">Tap here to apply haldi</div>
+    <div class="tap">மஞ்சள் பூச இங்கே தட்டுங்கள்</div>
   </section>
 
   <section class="card" aria-labelledby="cd-h">
-    <h2 id="cd-h">The haldi begins in<small>get your yellow ready</small></h2>
+    <h2 id="cd-h">மஞ்சள் விழா தொடங்க இன்னும்</h2>
     <div class="countdown">
-      <div><b id="cd-d">--</b><span>Days</span></div>
-      <div><b id="cd-h2">--</b><span>Hours</span></div>
-      <div><b id="cd-m">--</b><span>Mins</span></div>
-      <div><b id="cd-s">--</b><span>Secs</span></div>
+      <div><b id="cd-d">--</b><span>நாள்</span></div>
+      <div><b id="cd-h2">--</b><span>மணி</span></div>
+      <div><b id="cd-m">--</b><span>நிமிடம்</span></div>
+      <div><b id="cd-s">--</b><span>விநாடி</span></div>
     </div>
-    <p class="cd-note">Saturday, 21 November 2026 · 6:00 PM</p>
+    <p class="cd-note">வெள்ளிக்கிழமை, 20 நவம்பர் 2026 · மாலை 6 மணி</p>
   </section>
 
   <article class="ticket" aria-label="Haldi function details">
-    <div class="stub"><span class="m">NOV</span><span class="d">21</span><span class="w">Saturday</span></div>
+    <div class="stub"><span class="m">நவ</span><span class="d">20</span><span class="w">வெள்ளி</span></div>
     <div class="ticket-body">
-      <h3>Haldi Function</h3>
-      <div class="ta">மஞ்சள் விழா</div>
+      <h3>மஞ்சள் விழா</h3>
+      
       <dl>
-        <dt>Time</dt><dd>6:00 PM onwards</dd>
-        <dt>Dress</dt><dd><span class="chip"><i></i>Yellow</span></dd>
-        <dt>Venue</dt><dd>Gayathri's Home, Kakkan Nagar</dd>
+        <dt>நேரம்</dt><dd>மாலை 6 மணி முதல்</dd>
+        <dt>உடை</dt><dd><span class="chip"><i></i>மஞ்சள்</span></dd>
+        <dt>இடம்</dt><dd>காயத்ரி இல்லம், கக்கன் நகர்</dd>
       </dl>
     </div>
   </article>
 
   <section class="card venue" aria-labelledby="venue-h">
-    <h2 id="venue-h">Venue<small>see you at home</small></h2>
-    <p class="place">Gayathri's Home</p>
-    <p class="sub">Kakkan Nagar · 21 Nov · 6 PM</p>
+    <h2 id="venue-h">இடம்</h2>
+    <p class="place">காயத்ரி இல்லம்</p>
+    <p class="sub">கக்கன் நகர் · 20 நவம்பர் · மாலை 6 மணி</p>
   </section>
 
   <section class="card" aria-labelledby="fam-h">
-    <h2 id="fam-h">With the blessings of</h2>
+    <h2 id="fam-h">நல்லாசியுடன்</h2>
     <div class="families">
       <div>
-        <h3>Bride's family</h3>
-        <p>Mr. Senthil Kumar</p>
-        <p>Mrs. Priya S</p>
-        <p class="of">Parents of Gayathri Devi S</p>
+        <h3>மணமகள் வீட்டார்</h3>
+        <p>திரு. செந்தில் குமார்</p>
+        <p>திருமதி. செ. பிரியா</p>
+        <p class="of">செ. காயத்ரி தேவியின் பெற்றோர்</p>
       </div>
       <div>
-        <h3>Groom's family</h3>
-        <p>Mr. Paninathan M</p>
-        <p>Mrs. Kannaki P</p>
-        <p class="of">Parents of Vikram P</p>
+        <h3>மணமகன் வீட்டார்</h3>
+        <p>திரு. ம. பனிநாதன்</p>
+        <p>திருமதி. ப. கண்ணகி</p>
+        <p class="of">ப. விக்ரமின் பெற்றோர்</p>
       </div>
     </div>
-    <p class="bless">Come dressed in yellow and shower the couple with haldi and love!</p>
+    <p class="bless">மஞ்சள் உடையில் வந்து மணமக்களை மஞ்சளும் அன்பும் பொழிந்து வாழ்த்துங்கள்!</p>
   </section>
 </main>
 
 <footer>
-  <div class="tag">#GayathriWedsVikram</div>
-  <div>21 November 2026 · Gayathri's Home, Kakkan Nagar</div>
+  <div class="tag">காயத்ரி &amp; விக்ரம்</div>
+  <div>20 நவம்பர் 2026 · காயத்ரி இல்லம், கக்கன் நகர்</div>
 </footer>
 
 <script>
@@ -239,12 +251,12 @@ footer div{font-family:var(--hand);font-size:18px}
   buildStrands(); addEventListener("resize", buildStrands);
 
   // countdown
-  var target = new Date("2026-11-21T18:00:00+05:30").getTime();
+  var target = new Date("2026-11-20T18:00:00+05:30").getTime();
   var ids = ["cd-d","cd-h2","cd-m","cd-s"].map(function(i){return document.getElementById(i);});
   function pad(n){return String(n).padStart(2,"0");}
   function tick(){
     var diff = target - Date.now();
-    if (diff <= 0){ ids.forEach(function(el){el.textContent="00";}); document.getElementById("cd-h").firstChild.textContent = "The haldi has begun!"; return; }
+    if (diff <= 0){ ids.forEach(function(el){el.textContent="00";}); document.getElementById("cd-h").firstChild.textContent = "மஞ்சள் விழா தொடங்கியது!";  return; }
     var s = Math.floor(diff/1000);
     ids[0].textContent = Math.floor(s/86400);
     ids[1].textContent = pad(Math.floor(s%86400/3600));
